@@ -1,0 +1,1 @@
+<div class='box_photographer'><a href='{ITEM_URL}'>{ITEM_TITLE}</a> <span>({ITEM_QUANTITY} files)</span></div>

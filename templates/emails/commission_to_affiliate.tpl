@@ -1,0 +1,1 @@
+<p>Hello {NAME},<br /><br />There is a new sale at {SITE_NAME}.<br /><strong>{lang.Order}:</strong> {ORDER_ID}<br /><strong>{lang.Earning}:</strong> {EARNING}<br /><br />Thank you,<br />{SITE_NAME}</p>

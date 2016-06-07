@@ -1,0 +1,52 @@
+RewriteEngine on
+RewriteBase /
+
+RewriteRule ^category\/([0-9a-z-]+).html$ index.php?category=$1 [L]
+RewriteRule ^category\/([a-z]+)\/([0-9a-z-]+).html$ index.php?category=$2&vd=$1 [L]
+
+RewriteRule ^static([0-9]*)\/preview([0-9]*)\/[0-9a-z-]+-([0-9]+).(jpg|jpeg|flv|swf|wmv|mp4|mp3|mov)$ content$1/$3/thumb$2.$4 [L]
+
+RewriteRule ^stock-photo\/[0-9a-z-]+-([0-9]+).html$ index.php?catalog=$1&ctypes=photo [L]
+
+
+RewriteRule ^stock-video\/[0-9a-z-]+-([0-9]+).html$ index.php?catalog=$1&ctypes=video [L]
+
+
+RewriteRule ^stock-audio\/[0-9a-z-]+-([0-9]+).html$ index.php?catalog=$1&ctypes=audio [L]
+
+
+RewriteRule ^stock-vector\/[0-9a-z-]+-([0-9]+).html$ index.php?catalog=$1&ctypes=files [L]
+
+
+RewriteRule ^news\/([0-9]+)\/*$ news/?id=$1 [L]
+RewriteRule ^pages\/([0-9a-z-]+).html$ members/page.php?id=$1 [L]
+RewriteRule ^users\/([0-9a-z-]+).html$ members/user.php?user=$1 [L]
+RewriteRule ^model\/([0-9a-z-]+).html$ members/model.php?model=$1 [L]
+
+
+
+
+RewriteRule ^blog\/([0-9a-z-]+).html$ members/user_blog.php?user=$1 [L]
+RewriteRule ^blog\/([0-9a-z-]+)\/([0-9a-z-]+).html$ members/user_blog.php?user=$2&category=$1 [L]
+RewriteRule ^blog\/([0-9a-z-]+)\/([0-9a-z-]+)\/([0-9a-z-]+).html$ members/user_blog.php?user=$3&ayear=$1&amonth=$2 [L]
+RewriteRule ^post\/([0-9a-z-]+)\/([0-9a-z-]+).html$ members/user_blog_post.php?user=$1&postid=$2 [L]
+
+
+RewriteRule ^testimonials\/([0-9a-z-]+).html$ members/user_testimonials.php?user=$1 [L]
+RewriteRule ^friends\/([0-9a-z-]+).html$ members/user_friends.php?user=$1 [L]
+
+
+
+
+RewriteRule ^lightbox\/[0-9a-z-]+-([0-9]+).html$ index.php?lightbox=$1 [L]
+
+
+RewriteRule ^shutterstock-([a-z]*)\/[0-9a-z-]+-([0-9]+).html$ index.php?shutterstock=$2&shutterstock_type=$1&stock_api=1 [L]
+RewriteRule ^fotolia-([a-z]*)\/[0-9a-z-]+-([0-9]+).html$ index.php?fotolia=$2&fotolia_type=$1&stock_api=1 [L]
+RewriteRule ^istockphoto-([a-z]*)\/[0-9a-z-]+-([0-9]+).html$ index.php?istockphoto=$2&istockphoto_type=$1&stock_api=1 [L]
+RewriteRule ^depositphotos-([a-z]*)\/[0-9a-z-]+-([0-9]+).html$ index.php?depositphotos=$2&depositphotos_type=$1&stock_api=1 [L]
+RewriteRule ^bigstockphoto-([a-z]*)\/[0-9a-z-]+-([0-9]+).html$ index.php?bigstockphoto=$2&bigstockphoto_type=$1&stock_api=1 [L]
+RewriteRule ^123rf-([a-z]*)\/[0-9a-z-]+-([0-9]+).html$ index.php?rf123=$2&rf123_type=$1&stock_api=1 [L]
+
+
+

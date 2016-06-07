@@ -1,0 +1,1 @@
+<p>Hi,<br /><br />Thank you for your registration on {SITE_NAME}.<br />Your login: <strong>{LOGIN}</strong><br />Password: <strong>{PASSWORD}</strong><br /><br />Thank you,<br />{SITE_NAME}</p>

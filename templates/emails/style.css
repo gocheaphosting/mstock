@@ -1,0 +1,78 @@
+
+
+body
+{
+margin:0px;
+background:#dddddd;
+}
+
+#email_bg
+{
+background:#dddddd;
+}
+
+
+#wrapper_email
+{
+position:relative;
+width:600px;
+margin-left:auto;
+margin-right:auto;
+display:block;
+}
+
+#header_email
+{
+height:85px;
+background:url(images/header.gif);
+background-repeat:repeat-x;
+}
+
+#content_email
+{
+background:#FFFFFF;
+padding:10px 20px 20px 20px;
+min-height:230px;
+}
+
+#content_email,#content_email p,#content_email span
+{
+color:#373737;
+font:12px Arial;
+}
+
+#logo_email
+{
+padding:30px 0px 0px 20px;
+color:#FFFFFF;
+font:18px Arial;
+text-shadow: #212121 1px 1px 1px;
+}
+
+#footer_email
+{
+height:104px;
+background:url(images/footer.gif);
+background-repeat:repeat-x;
+}
+
+.copyright_email
+{
+color:#7d7777;
+font:12px Arial;
+padding:20px 20px 10px 20px;
+}
+
+#footer_email a:link,#footer_email a:hover,#footer_email a:visited
+{
+color:#4f8acd;
+text-decoration:underline;
+}
+
+.address_email
+{
+color:#999898;
+font:11px Arial;
+padding:0px 20px 0px 20px;
+}
+

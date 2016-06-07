@@ -1,0 +1,1 @@
+<p>Hello {NAME},<br /><br />Somebody unsuccessfully tried to log in to your account several times. We have changed your password. It is security issue.<br /><br />Your NEW password:&nbsp; <strong>{NEWPASSWORD}</strong><br /><br />Thank you,<br />{SITE_NAME}</p>

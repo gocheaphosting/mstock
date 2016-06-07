@@ -1,0 +1,1 @@
+<p>Hello {NAME},<br /><br />{MESSAGE}</p><p>{URL}<br /><br />Best regards,<br />{SITE_NAME}</p>

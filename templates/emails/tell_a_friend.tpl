@@ -1,0 +1,1 @@
+<p>Hello {NAME2},<br /><br />Your friend, <strong>{NAME}</strong> at <strong>{EMAIL}</strong>, recommended this link: {URL}<br /><br />Thank you,<br />{SITE_NAME}</p>

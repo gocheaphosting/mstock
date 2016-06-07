@@ -1,0 +1,1 @@
+<p>Thank you, {NAME}. Your message has been received. We will response stortly.<br /><br />Best regards,<br />{SITE_NAME}</p>

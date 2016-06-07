@@ -1,0 +1,1 @@
+<p><strong>{CREDITS_DETAILS}</strong><br /><strong>{lang.Date}:</strong> {DATE}<br /><br /><strong>{lang.Login}:</strong> {LOGIN}<br /><strong>{lang.Name}:</strong> {NAME}<br /><strong>{lang.E-mail}:</strong> {EMAIL}<br /><strong>{lang.Telephone}:</strong> {TELEPHONE}<br /><strong>{lang.Address}:</strong> {ADDRESS}<br /><strong>{lang.Country}:</strong> {COUNTRY}</p>

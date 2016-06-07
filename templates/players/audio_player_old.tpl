@@ -1,0 +1,1 @@
+<object type="application/x-shockwave-flash" data="{SITE_ROOT}/images/player_mp3_maxi.swf" width="200" height="20"><param name="movie" value="{SITE_ROOT}/images/player_mp3_maxi.swf" /><param name="FlashVars" value="mp3={PREVIEW_AUDIO}&amp;showstop=1&amp;showvolume=1" /></object>

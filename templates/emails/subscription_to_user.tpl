@@ -1,0 +1,1 @@
+<p>Hello {NAME},<br /><br />Thanks for buying a subscription on {SITE_NAME}! <br /><br /><strong>{SUBSCRIPTION_DETAILS}</strong><br /><strong>{lang.DATE}:</strong> {DATE}<br /><br />Thank you,<br />{SITE_NAME}</p>

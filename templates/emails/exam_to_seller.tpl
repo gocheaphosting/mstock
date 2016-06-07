@@ -1,0 +1,1 @@
+<p>Hello {NAME},<br /><br />Thank you for taking an examination at {SITE_NAME}!<br /><br /><strong>Result:</strong> {RESULT}<br /><strong>Date:</strong> {DATE}<br /><strong>Comments:</strong> {COMMENTS}<br /><br />Best regards,<br />{SITE_NAME}</p>

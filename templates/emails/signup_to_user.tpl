@@ -1,0 +1,1 @@
+<p>Hi {NAME},<br /><br />Thank you for your registration on {SITE_NAME}<br />Please, click next link: {CONFIRMATION_LINK} to confirm your registration.<br /><br />Thank you,<br />{SITE_NAME}</p>

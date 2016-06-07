@@ -1,0 +1,19 @@
+RewriteEngine On
+
+
+RewriteRule ([0-9]+)/thumb_original\.jpg$ ../content/access_denied.gif
+
+
+
+RewriteRule ([0-9]+)/([^t]{1}[A-Za-z0-9_-]{0,})\.([^s]{1}[A-Za-z0-9]+)$ ../members/download.php?u=$1/$2.$3
+
+
+
+Options -Indexes
+
+
+
+RemoveHandler .phtml .php .php3 .php4 .php5 .php6 .phps .cgi .exe .pl .asp .aspx .shtml .shtm .fcgi .fpl .jsp .htm .html .wml
+AddType text/html .phtml .php .php3 .php4 .php5 .php6 .phps .cgi .exe .pl .asp .aspx .shtml .shtm .fcgi .fpl .jsp .htm .html .wml 
+AddHandler server-parsed .phtml .php .php3 .php4 .php5 .php6 .phps .cgi .exe .pl .asp .aspx .shtml .shtm .fcgi .fpl .jsp .htm .html .wml
+

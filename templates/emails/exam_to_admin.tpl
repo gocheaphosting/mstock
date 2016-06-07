@@ -1,0 +1,1 @@
+<p>The user took an examination.<br /><br /><strong>Login:</strong> {LOGIN}<br /><strong>Date:</strong> {DATE}<br /><strong>ID:</strong> {ID}</p>

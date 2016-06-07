@@ -1,0 +1,1 @@
+<p><strong>{lang.Name}:</strong> {NAME}<br /><strong>{lang.E-mail}:</strong> {EMAIL}<br /><strong>{lang.Telephone}:</strong> {TELEPHONE}<br /><strong>{lang.Method}:</strong> {METHOD}<br /><strong>{lang.Question}:</strong> {QUESTION}<br /><strong>{lang.Date}:</strong> {DATE}</p>

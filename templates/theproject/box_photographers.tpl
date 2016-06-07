@@ -1,0 +1,1 @@
+<li><a href='{ITEM_URL}'>{ITEM_TITLE} &nbsp;&nbsp;<span class="label label-default">{ITEM_QUANTITY}</span></a></li>
