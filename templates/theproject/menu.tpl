@@ -64,7 +64,7 @@
 														<ul class="dropdown-menu">
 															<li>
 																<div class="col-lg-3  col-sm-3 col-md-3">
-																	<h4 class="hidden-xs">Список стилей:</h4>
+																	<h4 class="hidden-xs">Список стилей</h4>
 																	<ul class="menu">
 																		{STYLE_LIST_1_4}
 																	</ul>
@@ -95,13 +95,26 @@
 														<ul class="dropdown-menu">
 															<li>
 																<div class="col-lg-4  col-sm-4 col-md-4">
-																	<h4 class="hidden-xs">{lang.Site info}</h4>
+																	<h4 class="hidden-xs">Важная информация</h4>
 																	<ul class="menu">
-																		{SITE_INFO_LINKS}
-																  	</ul>
-																  </div>
+																		{SITE_INFO_LINKS_1_3}
+																	</ul>
+																</div>
+																<div class="col-lg-4  col-sm-4 col-md-4">
+																	<h4 class="hidden-xs">&nbsp;</h4>
+																	<ul class="menu">
+																		{SITE_INFO_LINKS_2_3}
+																	</ul>
+																</div>
+																<div class="col-lg-4  col-sm-4 col-md-4">
+																	<h4 class="hidden-xs">&nbsp;</h4>
+																	<ul class="menu">
+																		{SITE_INFO_LINKS_3_3}
+																	</ul>
+																</div>
 															</li>
 														</ul>
+													</li>
 													</li>
 												</ul>
 
