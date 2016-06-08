@@ -23,6 +23,12 @@
 																		{TREND_LIST}
 																	</ul>
 																</div>
+																<div class="col-lg-3  col-sm-3 col-md-3  col-xs-6">
+																	<a class="newProductMenuBlock" href="{CATEGORY_FEATURED_URL_0}"> <img class="img-responsive" src="{CATEGORY_FEATURED_PHOTO_0}" alt="product"> <span class="ProductMenuCaption"> {CATEGORY_FEATURED_0} </span> </a>
+																</div>
+																<div class="col-lg-3  col-sm-3 col-md-3  col-xs-6">
+																	<a class="newProductMenuBlock" href="{CATEGORY_FEATURED_URL_1}"> <img class="img-responsive" src="{CATEGORY_FEATURED_PHOTO_1}" alt="product"> <span class="ProductMenuCaption"> {CATEGORY_FEATURED_1} </span> </a>
+																</div>
 															</div>
 															</li>
 
