@@ -520,10 +520,10 @@ $cat_list[6][6]="";
 $sql="select a.id,a.id_parent,b.id_parent,b.title,b.url,b.photo,b.featured from structure a,category b where a.id=b.id_parent and a.id_parent=7474 and  b.published=1 and b.password=''  order by b.title";
 //$sql="select id_parent,title,url,photo,featured from category where published=1 and password='' order by title";
 $rs->open($sql);
-$n2=1;
-$n3=1;
-$n4=1;
-$n6=1;
+//$n2=1;
+//$n3=1;
+//$n4=1;
+//$n6=1;
 
 $N = 1;
 
@@ -581,21 +581,106 @@ for ($i = 0; $i <$N;  $i++) {
 }
 
 
-$file_template=str_replace("{CAT_LIST}",$cat_list[0][0],$file_template);
-$file_template=str_replace("{CAT_LIST_1_2}",$cat_list[1][2],$file_template);
-$file_template=str_replace("{CAT_LIST_2_2}",$cat_list[2][2],$file_template);
-$file_template=str_replace("{CAT_LIST_1_3}",$cat_list[1][3],$file_template);
-$file_template=str_replace("{CAT_LIST_2_3}",$cat_list[2][3],$file_template);
-$file_template=str_replace("{CAT_LIST_3_3}",$cat_list[3][3],$file_template);
+#$file_template=str_replace("{CAT_LIST}",$cat_list[0][0],$file_template);
+#$file_template=str_replace("{CAT_LIST_1_2}",$cat_list[1][2],$file_template);
+#$file_template=str_replace("{CAT_LIST_2_2}",$cat_list[2][2],$file_template);
+#$file_template=str_replace("{CAT_LIST_1_3}",$cat_list[1][3],$file_template);
+#$file_template=str_replace("{CAT_LIST_2_3}",$cat_list[2][3],$file_template);
+#$file_template=str_replace("{CAT_LIST_3_3}",$cat_list[3][3],$file_template);
 $file_template=str_replace("{CAT_LIST_1_4}",$cat_list[1][4],$file_template);
 $file_template=str_replace("{CAT_LIST_2_4}",$cat_list[2][4],$file_template);
 $file_template=str_replace("{CAT_LIST_3_4}",$cat_list[3][4],$file_template);
 $file_template=str_replace("{CAT_LIST_4_4}",$cat_list[4][4],$file_template);
-$file_template=str_replace("{CAT_LIST_1_6}",$cat_list[1][6],$file_template);
-$file_template=str_replace("{CAT_LIST_2_6}",$cat_list[2][6],$file_template);
-$file_template=str_replace("{CAT_LIST_3_6}",$cat_list[3][6],$file_template);
-$file_template=str_replace("{CAT_LIST_4_6}",$cat_list[4][6],$file_template);
-$file_template=str_replace("{CAT_LIST_5_6}",$cat_list[5][6],$file_template);
-$file_template=str_replace("{CAT_LIST_6_6}",$cat_list[6][6],$file_template);
+#$file_template=str_replace("{CAT_LIST_1_6}",$cat_list[1][6],$file_template);
+#$file_template=str_replace("{CAT_LIST_2_6}",$cat_list[2][6],$file_template);
+#$file_template=str_replace("{CAT_LIST_3_6}",$cat_list[3][6],$file_template);
+#$file_template=str_replace("{CAT_LIST_4_6}",$cat_list[4][6],$file_template);
+#$file_template=str_replace("{CAT_LIST_5_6}",$cat_list[5][6],$file_template);
+#$file_template=str_replace("{CAT_LIST_6_6}",$cat_list[6][6],$file_template);
+
+
+
+
+
+$sql="select a.id,a.id_parent,b.id_parent,b.title,b.url,b.photo,b.featured from structure a,category b where a.id=b.id_parent and a.id_parent=7904 and  b.published=1 and b.password=''  order by b.title";
+//$sql="select id_parent,title,url,photo,featured from category where published=1 and password='' order by title";
+$rs->open($sql);
+//$n2=1;
+//$n3=1;
+//$n4=1;
+//$n6=1;
+
+$N = 1;
+
+while(!$rs->eof)
+{
+	$translate_results=translate_category($rs->row["id_parent"],$rs->row["title"],"","");
+
+	$new_style[]="<li><a href='".site_root.$rs->row["url"]."'>".$translate_results["title"]."</a></li>";
+
+	/*if($n2==3)
+	{
+		$n2=1;
+	}
+	if($n3==4)
+	{
+		$n3=1;
+	}
+	if($n4==5)
+	{
+		$n4=1;
+	}
+	if($n6==7)
+	{
+		$n6=1;
+	}*/
+	/*
+        $cat_list[0][0].=$new_cat;
+        $cat_list[$n2][2].=$new_cat;
+        $cat_list[$n3][3].=$new_cat;
+        $cat_list[$n4][4].=$new_cat;
+        $cat_list[$n6][6].=$new_cat;
+    */
+
+	$N++;
+	/*
+	$n2++;
+	$n3++;
+	$n4++;
+	$n6++;*/
+	$rs->movenext();
+}
+
+$NN = ceil(count($new_cat)/4);
+
+for ($i = 0; $i <$N;  $i++) {
+	if  ($i < $NN) {
+		$style_list[1][4] .= $new_style[$i];
+	} elseif ($NN <= $i && $i < 2*$NN) {
+		$style_list[2][4] .= $new_style[$i];
+	} elseif (2*$NN <= $i && $i < 3*$NN) {
+		$style_list[3][4] .= $new_style[$i];
+	} else {
+		$style_list[4][4] .= $new_style[$i];
+	}
+}
+
+
+#$file_template=str_replace("{CAT_LIST}",$cat_list[0][0],$file_template);
+#$file_template=str_replace("{CAT_LIST_1_2}",$cat_list[1][2],$file_template);
+#$file_template=str_replace("{CAT_LIST_2_2}",$cat_list[2][2],$file_template);
+#$file_template=str_replace("{CAT_LIST_1_3}",$cat_list[1][3],$file_template);
+#$file_template=str_replace("{CAT_LIST_2_3}",$cat_list[2][3],$file_template);
+#$file_template=str_replace("{CAT_LIST_3_3}",$cat_list[3][3],$file_template);
+$file_template=str_replace("{STYLE_LIST_1_4}",$style_list[1][4],$file_template);
+$file_template=str_replace("{STYLE_LIST_2_4}",$style_list[2][4],$file_template);
+$file_template=str_replace("{STYLE_LIST_3_4}",$style_list[3][4],$file_template);
+$file_template=str_replace("{STYLE_LIST_4_4}",$style_list[4][4],$file_template);
+#$file_template=str_replace("{CAT_LIST_1_6}",$cat_list[1][6],$file_template);
+#$file_template=str_replace("{CAT_LIST_2_6}",$cat_list[2][6],$file_template);
+#$file_template=str_replace("{CAT_LIST_3_6}",$cat_list[3][6],$file_template);
+#$file_template=str_replace("{CAT_LIST_4_6}",$cat_list[4][6],$file_template);
+#$file_template=str_replace("{CAT_LIST_5_6}",$cat_list[5][6],$file_template);
+#$file_template=str_replace("{CAT_LIST_6_6}",$cat_list[6][6],$file_template);
 
 ?>

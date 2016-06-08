@@ -1,7 +1,7 @@
 
 												<ul class="nav navbar-nav">
 													<li class="dropdown mega-menu">
-														<a href="#" class="dropdown-toggle" data-toggle="dropdown">Обзор</a>
+														<a href="{SITE_ROOT}members/categories.php" class="dropdown-toggle" data-toggle="dropdown">Обзор</a>
 														<ul class="dropdown-menu">
 															<li>
 
@@ -54,6 +54,37 @@
 																	<h4 class="hidden-xs">&nbsp;</h4>
 																	<ul class="menu">
 																		{CAT_LIST_4_4}
+																	</ul>
+																</div>
+															</li>
+														</ul>
+													</li>
+													<li class="dropdown mega-menu">
+														<a href="{SITE_ROOT}members/categories.php" class="dropdown-toggle" data-toggle="dropdown">Стили</a>
+														<ul class="dropdown-menu">
+															<li>
+																<div class="col-lg-3  col-sm-3 col-md-3">
+																	<h4 class="hidden-xs">Список стилей</h4>
+																	<ul class="menu">
+																		{STYLE_LIST_1_4}
+																	</ul>
+																</div>
+																<div class="col-lg-3  col-sm-3 col-md-3">
+																	<h4 class="hidden-xs">&nbsp;</h4>
+																	<ul class="menu">
+																		{STYLE_LIST_2_4}
+																	</ul>
+																</div>
+																<div class="col-lg-3  col-sm-3 col-md-3">
+																	<h4 class="hidden-xs">&nbsp;</h4>
+																	<ul class="menu">
+																		{STYLE_LIST_3_4}
+																	</ul>
+																</div>
+																<div class="col-lg-3  col-sm-3 col-md-3">
+																	<h4 class="hidden-xs">&nbsp;</h4>
+																	<ul class="menu">
+																		{STYLE_LIST_4_4}
 																	</ul>
 																</div>
 															</li>
