@@ -205,14 +205,13 @@ if($global_settings["allow_vector"]==1)
 
 if(!isset($_SESSION["site_info_content"]) or $_SESSION["site_info_content"]=="" or $flag_ssl)
 {
-	$site_info_content="";
 	$sql="select id_parent,link,title,url from pages where siteinfo=1 order by priority";
 	$rs->open($sql);
 	while(!$rs->eof)
 	{
 		$url=page_url($rs->row["id_parent"],$rs->row["url"]);
 		if($rs->row["link"]!=""){$url=$rs->row["link"];}
-		$site_info_content.="<li><a href='".$url."'>".word_lang($rs->row["title"])."</a></li>";
+		$site_info_content[]="<li><a href='".$url."'>".word_lang($rs->row["title"])."</a></li>";
 		$rs->movenext();
 	}
 	$_SESSION["site_info_content"]=$site_info_content;
@@ -221,7 +220,27 @@ else
 {
 	$site_info_content=$_SESSION["site_info_content"];
 }
+
 $file_template=str_replace("{SITE_INFO_LINKS}",$site_info_content,$file_template);
+
+$N = count($site_info_content);
+$NN = ceil($N/3);
+
+for ($i = 0; $i <$N;  $i++) {
+	if  ($i < $NN) {
+		$site_info_list[1][3] .= $site_info_content[$i];
+	} elseif ($NN <= $i && $i < 2*$NN) {
+		$site_info_list[2][3] .= $site_info_content[$i];
+	} else {
+		$site_info_list[3][3] .= $site_info_content[$i];
+	}
+}
+
+
+$file_template=str_replace("{SITE_INFO_LINKS_1_3}",$site_info_list[1][3],$file_template);
+$file_template=str_replace("{SITE_INFO_LINKS_2_3}",$site_info_list[2][3],$file_template);
+$file_template=str_replace("{SITE_INFO_LINKS_3_3}",$site_info_list[3][3],$file_template);
+
 
 
 if($site=="categories")
@@ -481,21 +500,21 @@ while(!$rs->eof)
 }
 
 $file_template=str_replace("{TREND_LIST}",$trends_list[0][0],$file_template);
-$file_template=str_replace("{TREND_LIST_1_2}",$trends_list[1][2],$file_template);
-$file_template=str_replace("{TREND_LIST_2_2}",$trends_list[2][2],$file_template);
-$file_template=str_replace("{TREND_LIST_1_3}",$trends_list[1][3],$file_template);
-$file_template=str_replace("{TREND_LIST_2_3}",$trends_list[2][3],$file_template);
-$file_template=str_replace("{TREND_LIST_3_3}",$trends_list[3][3],$file_template);
-$file_template=str_replace("{TREND_LIST_1_4}",$trends_list[1][4],$file_template);
-$file_template=str_replace("{TREND_LIST_2_4}",$trends_list[2][4],$file_template);
-$file_template=str_replace("{TREND_LIST_3_4}",$trends_list[3][4],$file_template);
-$file_template=str_replace("{TREND_LIST_4_4}",$trends_list[4][4],$file_template);
-$file_template=str_replace("{TREND_LIST_1_6}",$trends_list[1][6],$file_template);
-$file_template=str_replace("{TREND_LIST_2_6}",$trends_list[2][6],$file_template);
-$file_template=str_replace("{TREND_LIST_3_6}",$trends_list[3][6],$file_template);
-$file_template=str_replace("{TREND_LIST_4_6}",$trends_list[4][6],$file_template);
-$file_template=str_replace("{TREND_LIST_5_6}",$trends_list[5][6],$file_template);
-$file_template=str_replace("{TREND_LIST_6_6}",$trends_list[6][6],$file_template);
+#$file_template=str_replace("{TREND_LIST_1_2}",$trends_list[1][2],$file_template);
+#$file_template=str_replace("{TREND_LIST_2_2}",$trends_list[2][2],$file_template);
+#$file_template=str_replace("{TREND_LIST_1_3}",$trends_list[1][3],$file_template);
+#$file_template=str_replace("{TREND_LIST_2_3}",$trends_list[2][3],$file_template);
+#$file_template=str_replace("{TREND_LIST_3_3}",$trends_list[3][3],$file_template);
+#$file_template=str_replace("{TREND_LIST_1_4}",$trends_list[1][4],$file_template);
+#$file_template=str_replace("{TREND_LIST_2_4}",$trends_list[2][4],$file_template);
+#$file_template=str_replace("{TREND_LIST_3_4}",$trends_list[3][4],$file_template);
+#$file_template=str_replace("{TREND_LIST_4_4}",$trends_list[4][4],$file_template);
+#$file_template=str_replace("{TREND_LIST_1_6}",$trends_list[1][6],$file_template);
+#$file_template=str_replace("{TREND_LIST_2_6}",$trends_list[2][6],$file_template);
+#$file_template=str_replace("{TREND_LIST_3_6}",$trends_list[3][6],$file_template);
+#$file_template=str_replace("{TREND_LIST_4_6}",$trends_list[4][6],$file_template);
+#$file_template=str_replace("{TREND_LIST_5_6}",$trends_list[5][6],$file_template);
+#$file_template=str_replace("{TREND_LIST_6_6}",$trends_list[6][6],$file_template);
 
 
 
@@ -524,8 +543,6 @@ $rs->open($sql);
 //$n3=1;
 //$n4=1;
 //$n6=1;
-
-$N = 1;
 
 while(!$rs->eof)
 {
@@ -557,7 +574,6 @@ while(!$rs->eof)
 	$cat_list[$n6][6].=$new_cat;
 */
 
-	$N++;
 	/*
 	$n2++;
 	$n3++;
@@ -566,7 +582,8 @@ while(!$rs->eof)
 	$rs->movenext();
 }
 
-$NN = ceil(count($new_cat)/4);
+$N = count($new_cat);
+$NN = ceil($N/4);
 
 for ($i = 0; $i <$N;  $i++) {
 	if  ($i < $NN) {
@@ -610,8 +627,6 @@ $rs->open($sql);
 //$n4=1;
 //$n6=1;
 
-$N = 1;
-
 while(!$rs->eof)
 {
 	$translate_results=translate_category($rs->row["id_parent"],$rs->row["title"],"","");
@@ -651,9 +666,10 @@ while(!$rs->eof)
 	$rs->movenext();
 }
 
-$NN = ceil(count($new_cat)/4);
+$N = count($new_cat);
+$NN = ceil($N/4);
 
-for ($i = 0; $i <$N;  $i++) {
+for ($i = 0; $i <$NN;  $i++) {
 	if  ($i < $NN) {
 		$style_list[1][4] .= $new_style[$i];
 	} elseif ($NN <= $i && $i < 2*$NN) {
