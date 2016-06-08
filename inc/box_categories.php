@@ -221,7 +221,7 @@ else
 	$site_info_content=$_SESSION["site_info_content"];
 }
 
-$file_template=str_replace("{SITE_INFO_LINKS}",$site_info_content,$file_template);
+#$file_template=str_replace("{SITE_INFO_LINKS}",$site_info_content,$file_template);
 
 $N = count($site_info_content);
 $NN = ceil($N/3);
@@ -350,11 +350,11 @@ $hmenu.="</div>";
 	$categories_list[4][6]="";
 	$categories_list[5][6]="";
 	$categories_list[6][6]="";
-
+/*
 	$category_featured=array();
 	$category_featured_url=array();
 	$category_featured_photo=array();
-
+*/
 
 	$sql="select a.id,a.id_parent,b.id_parent,b.title,b.url,b.photo,b.featured from structure a,category b where a.id=b.id_parent and a.id_parent=5 and  b.published=1 and b.password=''  order by b.title";
 	//$sql="select id_parent,title,url,photo,featured from category where published=1 and password='' order by title";
@@ -391,14 +391,14 @@ $hmenu.="</div>";
  		$categories_list[$n3][3].=$new_category;
 		$categories_list[$n4][4].=$new_category;
 		$categories_list[$n6][6].=$new_category;
-
+/*
 		if($rs->row["featured"]==1)
 		{
 			$category_featured[]=$translate_results["title"];
 			$category_featured_url[]=site_root.$rs->row["url"];
 			$category_featured_photo[]=$rs->row["photo"];
 		}
-
+*/
 		$n2++;
 		$n3++;
 		$n4++;
@@ -426,13 +426,14 @@ $file_template=str_replace("{CATEGORY_LIST_4_6}",$categories_list[4][6],$file_te
 $file_template=str_replace("{CATEGORY_LIST_5_6}",$categories_list[5][6],$file_template);
 $file_template=str_replace("{CATEGORY_LIST_6_6}",$categories_list[6][6],$file_template);
 
+/*
 for($n=0;$n<10;$n++)
 {
 	$file_template=str_replace("{CATEGORY_FEATURED_".$n."}",@$category_featured[$n],$file_template);
 	$file_template=str_replace("{CATEGORY_FEATURED_URL_".$n."}",@$category_featured_url[$n],$file_template);
 	$file_template=str_replace("{CATEGORY_FEATURED_PHOTO_".$n."}",@$category_featured_photo[$n],$file_template);
 }
-
+*/
 
 $file_template=str_replace("{BOX_CATEGORIES}",$box_categories,$file_template);
 $file_template=str_replace("{BOX_CATEGORIES2}",$box_categories2,$file_template);
@@ -539,6 +540,9 @@ $cat_list[4][6]="";
 $cat_list[5][6]="";
 $cat_list[6][6]="";
 
+$category_featured=array();
+$category_featured_url=array();
+$category_featured_photo=array();
 
 $sql="select a.id,a.id_parent,b.id_parent,b.title,b.url,b.photo,b.featured from structure a,category b where a.id=b.id_parent and a.id_parent=7474 and  b.published=1 and b.password=''  order by b.title";
 //$sql="select id_parent,title,url,photo,featured from category where published=1 and password='' order by title";
@@ -578,6 +582,13 @@ while(!$rs->eof)
 	$cat_list[$n4][4].=$new_cat;
 	$cat_list[$n6][6].=$new_cat;
 */
+
+	if($rs->row["featured"]==1)
+	{
+		$category_featured[]=$translate_results["title"];
+		$category_featured_url[]=site_root.$rs->row["url"];
+		$category_featured_photo[]=$rs->row["photo"];
+	}
 
 	/*
 	$n2++;
@@ -620,6 +631,12 @@ $file_template=str_replace("{CAT_LIST_4_4}",$cat_list[4][4],$file_template);
 #$file_template=str_replace("{CAT_LIST_5_6}",$cat_list[5][6],$file_template);
 #$file_template=str_replace("{CAT_LIST_6_6}",$cat_list[6][6],$file_template);
 
+for($n=0;$n<10;$n++)
+{
+	$file_template=str_replace("{CATEGORY_FEATURED_".$n."}",@$category_featured[$n],$file_template);
+	$file_template=str_replace("{CATEGORY_FEATURED_URL_".$n."}",@$category_featured_url[$n],$file_template);
+	$file_template=str_replace("{CATEGORY_FEATURED_PHOTO_".$n."}",@$category_featured_photo[$n],$file_template);
+}
 
 
 
