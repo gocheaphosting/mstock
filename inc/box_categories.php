@@ -548,6 +548,7 @@ $rs->open($sql);
 //$n4=1;
 //$n6=1;
 
+
 while(!$rs->eof)
 {
 	$translate_results=translate_category($rs->row["id_parent"],$rs->row["title"],"","");
@@ -661,7 +662,6 @@ while(!$rs->eof)
         $cat_list[$n6][6].=$new_cat;
     */
 
-	$N++;
 	/*
 	$n2++;
 	$n3++;
@@ -670,7 +670,7 @@ while(!$rs->eof)
 	$rs->movenext();
 }
 
-$N = count($new_cat);
+$N = count($new_style);
 $NN = ceil($N/4);
 
 $style_list[1][4] = "";
@@ -678,7 +678,7 @@ $style_list[2][4] = "";
 $style_list[3][4] = "";
 $style_list[4][4] = "";
 
-for ($i = 0; $i <$NN;  $i++) {
+for ($i = 0; $i <$N;  $i++) {
 	if  ($i < $NN) {
 		$style_list[1][4] .= $new_style[$i];
 	} elseif ($NN <= $i && $i < 2*$NN) {
