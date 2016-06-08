@@ -9,6 +9,4 @@
  */
 
 chdir('..');
-system('/usr/bin/env -i /usr/bin/git pull origin develop 2>&1');
-
-echo "ok";
+system('/usr/bin/env -i /usr/bin/git pull origin master 2>&1');
