@@ -673,6 +673,11 @@ while(!$rs->eof)
 $N = count($new_cat);
 $NN = ceil($N/4);
 
+$style_list[1][4] = "";
+$style_list[2][4] = "";
+$style_list[3][4] = "";
+$style_list[4][4] = "";
+
 for ($i = 0; $i <$NN;  $i++) {
 	if  ($i < $NN) {
 		$style_list[1][4] .= $new_style[$i];
