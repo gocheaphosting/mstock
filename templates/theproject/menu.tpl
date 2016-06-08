@@ -64,7 +64,7 @@
 														<ul class="dropdown-menu">
 															<li>
 																<div class="col-lg-3  col-sm-3 col-md-3">
-																	<h4 class="hidden-xs">Список стилей</h4>
+																	<h4 class="hidden-xs">Список стилей:</h4>
 																	<ul class="menu">
 																		{STYLE_LIST_1_4}
 																	</ul>
