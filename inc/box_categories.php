@@ -226,6 +226,10 @@ $file_template=str_replace("{SITE_INFO_LINKS}",$site_info_content,$file_template
 $N = count($site_info_content);
 $NN = ceil($N/3);
 
+$site_info_list[1][3] = "";
+$site_info_list[2][3] = "";
+$site_info_list[3][3] = "";
+
 for ($i = 0; $i <$N;  $i++) {
 	if  ($i < $NN) {
 		$site_info_list[1][3] .= $site_info_content[$i];
