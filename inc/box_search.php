@@ -1,4 +1,4 @@
-<?
+	<?
 if(!defined("site_root")){exit();}
 
 $box_search=file_get_contents($DOCUMENT_ROOT."/".$site_template_url."box_search.tpl");
