@@ -94,9 +94,9 @@ function deselect_row(value)
 
 
 <?
-$d=2;
+$d=4;
 if(isset($_GET["d"])){$d=$_GET["d"];}
-if($d==""){$d=2;}
+if($d==""){$d=4;}
 
 ?>
 
@@ -104,10 +104,11 @@ if($d==""){$d=2;}
 
 <div class="tabbable nav-tabs-custom">
     	<ul class="nav nav-tabs" style="margin:10px 6px 10px 6px">
-			<li <?if($d==2){echo("class='active'");}?>><a href="index.php?d=2"><?=word_lang("photo")?></a></li>
+            <li <?if($d==4){echo("class='active'");}?>><a href="index.php?d=4"><?=word_lang("audio")?></a></li>
+
+			<!--li <?if($d==2){echo("class='active'");}?>><a href="index.php?d=2"><?=word_lang("photo")?></a></li>
 			<li <?if($d==3){echo("class='active'");}?>><a href="index.php?d=3"><?=word_lang("video")?></a></li>
-			<li <?if($d==4){echo("class='active'");}?>><a href="index.php?d=4"><?=word_lang("audio")?></a></li>
-			<li <?if($d==5){echo("class='active'");}?>><a href="index.php?d=5"><?=word_lang("vector")?></a></li>
+			<li <?if($d==5){echo("class='active'");}?>><a href="index.php?d=5"><?=word_lang("vector")?></a></li-->
 			<li <?if($d==1){echo("class='active'");}?>><a href="index.php?d=1"><?=word_lang("categories")?></a></li>
 			<?
 			if($global_settings["prints_lab"])
@@ -125,15 +126,15 @@ if($d==""){$d=2;}
 
 
 <?
-//Текущая страница
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 if(!isset($_GET["str"])){$str=1;}
 else{$str=(int)$_GET["str"];}
 
-//Количество новостей на странице
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 $kolvo=$global_settings["k_str"];
 
 
-//Количество страниц на странице
+//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 $kolvo2=k_str2;
 
 

@@ -275,7 +275,7 @@ if($global_settings["userupload"]==1)
 	$hmenu.="<li ".$li_selected."><a href='".site_root."/members/users_list.php'>".word_lang("photographers")."</a></li>";
 }
 
-$hmenu.="<li><a href='#'>".word_lang("site info")."</a><ul>".$site_info_content."</ul></li>";
+$hmenu.="<li><a href='#'>".word_lang("site info")."</a><ul>". implode("", $site_info_content)."</ul></li>";
 
 
 if($global_settings["google_coordinates"]==1)
